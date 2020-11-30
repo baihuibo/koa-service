@@ -1,11 +1,28 @@
 {
   "name": "@5i5j/koa-service",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "koa simple service",
   "main": "index.js",
   "bin": "index.js",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Koa",
+    "static",
+    "server",
+    "http",
+    "folder",
+    "directory",
+    "nginx",
+    "dev",
+    "proxy"
+  ],
+  "author": "baihuibo@hotmail.com",
+  "homepage": "https://github.com/baihuibo/koa-service/blob/master/README.md",
+  "repository": {
+    "url": "https://github.com/baihuibo/koa-service"
+  },
+  "bugs": {
+    "url": "https://github.com/baihuibo/koa-service/issues"
+  },
   "license": "ISC",
   "dependencies": {
     "koa": "^2.13.0",
