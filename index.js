@@ -11,27 +11,32 @@ if (argv.h || argv.help) {
     console.log('  ')
     console.log('  运行命令 `npx @5i5j/koa-service` ')
     console.log('  可选参数:')
+    console.log('     --config=      配置文件路径')
     console.log('     --port=3000    监听端口，默认3000')
     console.log('     --rootDir=./   项目路径，默认`./`')
     console.log('     --basePath=/   项目访问基本路径，默认 `/` ')
-    console.log('     --proxyConfig= 代理转发配置文件路径')
     console.log('  ')
     return;
 }
 
 var cwd = process.cwd();
-var rootDir = path.join(cwd, argv.rootDir || './');
-var port = argv.port || 3000;
-var basePath = argv.basePath || '/';
+
+var config = {};
+if (argv.config) {
+    config = require(path.join(cwd, argv.config));
+}
+
+var rootDir = path.join(cwd, argv.rootDir || config.rootDir || './');
+var port = argv.port || config.port || 3000;
+var basePath = argv.basePath || config.basePath || '/';
 
 var app = new Koa();
 
 app.use(logger())
 app.use(cors());
 
-if (argv.proxyConfig) {
-    var config = require(path.join(cwd, argv.proxyConfig))
-    app.use(nginx(config));
+if (config.proxy) {
+    app.use(nginx(config.proxy));
 }
 
 app.use(staticServer({
