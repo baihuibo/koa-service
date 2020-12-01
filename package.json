@@ -1,6 +1,6 @@
 {
   "name": "@5i5j/koa-service",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "koa simple service",
   "main": "index.js",
   "bin": "index.js",

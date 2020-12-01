@@ -46,7 +46,7 @@ module.exports = {
 ----
 ```bash
 $ cd <project-name>
-$ npx @5i5j/koa-service --proxyConfig=server-config.js
+$ npx @5i5j/koa-service --config=server-config.js
 ```
 
 将`server-config.js`文件放置在项目根目录 `proxy` 规则可参考 [koa2-nginx](https://www.npmjs.com/package/koa2-nginx#example)
